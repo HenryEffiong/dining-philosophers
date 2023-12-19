@@ -107,4 +107,3 @@ func main() {
 	fmt.Println("---------------------------")
 	fmt.Printf("Order finished: %s\n", strings.Join(orderFinished, ", "))
 }
-// 
