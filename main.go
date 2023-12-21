@@ -107,3 +107,45 @@ func main() {
 	fmt.Println("---------------------------")
 	fmt.Printf("Order finished: %s\n", strings.Join(orderFinished, ", "))
 }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"sync"
+// 	"time"
+// )
+
+// var philosophers = []string{"Plato", "Socrates", "Aristotle"}
+// var wg sync.WaitGroup
+
+// func main() {
+
+// 	leftFork := &sync.Mutex{}
+// 	wg.Add(len(philosophers))
+// 	for i := 0; i < len(philosophers); i++ {
+// 		rightFork := &sync.Mutex{}
+// 		go diningSolution(philosophers[i], leftFork, rightFork)
+// 		leftFork = rightFork
+// 	}
+// 	wg.Wait()
+
+// }
+
+// func diningSolution(philosopher string, leftFork *sync.Mutex, rightFork *sync.Mutex) {
+// 	// when a philosopher is eating lock left and right fork
+// 	defer wg.Done()
+// 	for i := 0; i < 3; i++ {
+// 		leftFork.Lock()
+// 		rightFork.Lock()
+
+// 		// pretend to eat
+// 		fmt.Println(philosopher, " is eating...")
+// 		time.Sleep(2 * time.Second)
+
+// 		// unlock forks
+// 		leftFork.Unlock()
+// 		rightFork.Unlock()
+// 		fmt.Println(philosopher, " is done eating round", i+1)
+// 	}
+// }
